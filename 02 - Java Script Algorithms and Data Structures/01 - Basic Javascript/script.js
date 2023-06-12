@@ -399,6 +399,104 @@ multi-line comment */
 //     let myStr = "Jello World";
 //     myStr = "Hello World";
 
-// 35 - 
+// 35 - Use Bracket Notation to Find the Nth Character in a String
 
-console.log(myStr);
+// You can also use bracket notation to get the character at other positions within a string.
+// Remember that computers start counting at 0, so the first character is actually the zeroth 
+// character.
+
+// Example:
+// const firstName = "Ada";
+// const secondLetterOfFirstName = firstName[1];
+// secondLetterOfFirstName would have a value of the string d.
+
+// PROBLEM:
+// Let's try to set thirdLetterOfLastName to equal the third letter of the lastName variable 
+// using bracket notation.
+
+// SOLUTION:
+// const lastName = "Lovelace";
+// const thirdLetterOfLastName = lastName[2];
+
+// 36 - Use Bracket Notation to Find the Last Character in a String
+
+// In order to get the last letter of a string, you can subtract one from the string's length.
+// For example, if const firstName = "Ada", you can get the value of the last letter of the 
+// string by using firstName[firstName.length - 1].
+
+// Example:
+// const firstName = "Ada";
+// const lastLetter = firstName[firstName.length - 1];
+// lastLetter would have a value of the string a.
+
+// PROBLEM:
+// Use bracket notation to find the last character in the lastName variable.
+
+// SOLUTION:
+// const lastName = "Lovelace";
+// const lastLetterOfLastName = lastName[lastName.length - 1];
+
+// 37 - Use Bracket Notation to Find the Nth-to-Last Character in a String
+
+// You can use the same principle we just used to retrieve the last character in a string 
+// to retrieve the Nth-to-last character.
+// Example:
+// You can get the value of the third-to-last letter of the const firstName = "Augusta" string 
+// by using firstName[firstName.length - 3]
+
+// const firstName = "Augusta";
+// const thirdToLastLetter = firstName[firstName.length - 3];
+// thirdToLastLetter would have a value of the string s.
+
+// PROBLEM:
+// Use bracket notation to find the second-to-last character in the lastName string.
+
+// SOLUTION:
+// const lastName = "Lovelace";
+// const secondToLastLetterOfLastName = lastName[lastName.length - 2];
+
+// 38 - Word Blanks
+
+// You are provided sentences with some missing words, like nouns, verbs, adjectives and adverbs. 
+// You then fill in the missing pieces with words of your choice in a way that the completed 
+// sentence makes sense.
+
+// Consider this sentence:
+// It was really ____, and we ____ ourselves ____.
+// This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words 
+// of our choice to complete it. We can then assign the completed sentence to a variable as follows:
+
+// const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
+
+// PROBLEM: We provide you with a noun, a verb, an adjective and an adverb. You need to 
+// form a complete sentence using words of your choice, along with the words we provide.
+// You will need to use the string concatenation operator + to build a new string, using the 
+// provided variables: myNoun, myAdjective, myVerb, and myAdverb. You will then assign the formed 
+// string to the wordBlanks variable. You should not change the words assigned to the variables.
+
+// You will also need to account for spaces in your string, so that the final sentence has spaces 
+// between all the words. The result should be a complete sentence.
+
+// SOLUTION:
+// const myNoun = "dog";
+// const myAdjective = "big";
+// const myVerb = "ran";
+// const myAdverb = "quickly";
+
+// const wordBlanks = "My "+ myNoun + " is " + myAdjective + " and " + myVerb + " very " + myAdverb;
+
+// 39 - Store Multiple Values in one Variable using JavaScript Arrays
+
+// With JavaScript array variables, we can store several pieces of data in one place.
+// You start an array declaration with an opening square bracket, end it with a closing 
+// square bracket, and put a comma between each entry, like this:
+// const sandwich = ["peanut butter", "jelly", "bread"];
+
+// PROBLEM: Modify the new array myArray so that it contains both a string and a number (in that order).
+
+// SOLUTION: 
+// const myArray = ["Hello", 2];
+
+// 40 - 
+
+console.log(myArray);
