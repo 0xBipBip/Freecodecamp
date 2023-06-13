@@ -117,4 +117,24 @@ Emphasize the word love in the figcaption element by wrapping it in an emphasis 
     <figcaption>Cats <em>love</em> lasagna.</figcaption>
 </figure>
 
-Steps 26-
+Step 26-27
+After the figure element, add another h3 element.
+The code for an ordered list (ol) is similar to an unordered list, but list items in an ordered list are numbered when displayed.
+After the second section element's last h3 element, add an ordered list.
+
+<h3>Top 3 things cats hate:</h3>
+<ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+</ol>          
+
+Step 28-31
+After the ordered list, add another figure element.
+Inside the figure element you just added, nest an img element with a src attribute.
+To improve accessibility of the image you added, add an alt attribute.
+After the last img element, add a figcaption 
+<figure>
+      <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+      <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+</figure>
