@@ -129,12 +129,52 @@ After the second section element's last h3 element, add an ordered list.
     <li>other cats</li>
 </ol>          
 
-Step 28-31
+Step 28-32
 After the ordered list, add another figure element.
 Inside the figure element you just added, nest an img element with a src attribute.
 To improve accessibility of the image you added, add an alt attribute.
-After the last img element, add a figcaption 
+After the last img element, add a figcaption.
+The strong element is used to indicate that some text is of strong importance or urgent. 
 <figure>
       <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
       <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
 </figure>
+
+Step 33-43
+It is time to add a new section. Add an h2 element.
+Now you will add a web form to collect information from users.
+The action attribute indicates where form data should be sent. For example, <form action="/submit-url"></form> tells the browser that the form data should be sent to the path /submit-url.
+The input element allows you several ways to collect data from a web form. Like img elements, input elements are self-closing and do not need closing tags.
+There are many kinds of inputs you can create using the type attribute. You can easily create a password field, reset button, or a control to let users select a file from their computer.
+In order for a form's data to be accessed by the location specified in the action attribute, you must give the text field a name attribute and assign it a value to represent the data being submitted. For example, you could use the following syntax for an email address text field: <input type="text" name="email">.
+Placeholder text is used to give people a hint about what kind of information to enter into an input. For example, <input type="text" placeholder="Email address">.
+To prevent a user from submitting your form when required information is missing, you need to add the required attribute to an input element. There's no need to set a value to the required attribute. Instead, just add the word required to the input element, making sure there is space between it and other attributes.
+Use the button element to create a clickable button. For example, <button>Click Here</button> creates a button with the text Click Here.
+
+Even though you added your button below the text input, they appear next to each other on the page. That's because both input and button elements are inline elements, which don't appear on new lines.
+The button you added will submit the form by default. However, relying on default behavior may cause confusion. Add the type attribute with the value submit to the button to make it clear that it is a submit button.
+
+<section>
+  <h2>Cat Form</h2>
+  <form action="https://freecatphotoapp.com/submit-cat-photo"></form>
+  <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+  <button type="submit">Submit</button>
+</section>
+
+Step 44-51
+You can use radio buttons for questions where you want only one answer out of multiple options.
+Here is an example of a radio button with the option of cat: <input type="radio"> cat. Remember that input elements are self-closing.
+label elements are used to help associate the text for an input element with the input element itself (especially for assistive technologies like screen readers). For example, <label><input type="radio"> cat</label> makes it so clicking the word cat also selects the corresponding radio button.
+The id attribute is used to identify specific HTML elements. Each id attribute's value must be unique from all other id values for the entire page.
+Notice that both radio buttons can be selected at the same time. To make it so selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value.
+If you select the Indoor radio button and submit the form, the form data for the button is based on its name and value attributes. Since your radio buttons do not have a value attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons.
+Add a value attribute to both radio buttons. For convenience, set the button's value attribute to the same value as its id attribute.
+The fieldset element is used to group related inputs and labels together in a web form. fieldset elements are block-level elements, meaning that they appear on a new line.
+Nest the Indoor and Outdoor radio buttons within a fieldset element, and don't forget to indent the radio buttons.
+The legend element acts as a caption for the content in the fieldset element. It gives users context about what they should enter into that part of the form.
+
+<fieldset>
+    <legend>Is your cat an indoor or outdoor cat?</legend>
+    <label><input type="radio" checked id="indoor" name="indoor-outdoor" value="indoor"> Indoor</label>
+    <label><input type="radio" id="outdoor" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+</fieldset>
