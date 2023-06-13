@@ -178,3 +178,50 @@ The legend element acts as a caption for the content in the fieldset element. It
     <label><input type="radio" checked id="indoor" name="indoor-outdoor" value="indoor"> Indoor</label>
     <label><input type="radio" id="outdoor" name="indoor-outdoor" value="outdoor"> Outdoor</label>
 </fieldset>
+
+Step 52-61
+Next, you are going to add some new form input elements, so add another fieldset element directly below the current fieldset element.
+Forms commonly use checkboxes for questions that may have more than one answer. For example, here's a checkbox with the option of tacos: <input type="checkbox"> tacos.
+There's another way to associate an input element's text with the element itself. You can nest the text within a label element and add a for attribute with the same value as the input element's id attribute.
+Add the name attribute with the value personality to the checkbox input element.
+While you won't notice this in the browser, doing this makes it easier for a server to process your web form, especially when there are multiple checkboxes.
+Like radio buttons, form data for selected checkboxes are name / value attribute pairs. While the value attribute is optional, it's best practice to include it with any checkboxes or radio buttons on the page.
+Add a value attribute to each checkbox. For convenience, set each checkbox's value attribute to the same value as its id attribute.
+Passed
+In order to make a checkbox checked or radio button selected by default, you need to add the checked attribute to it. There's no need to set a value to the checked attribute. Instead, just add the word checked to the input element, making sure there is space between it and other attributes.
+
+<fieldset>
+    <legend>What's your cat's personality?</legend>
+    <input type="checkbox" checked id="loving" name="personality" value="loving"> <label for="loving"> Loving</label>
+    <input type="checkbox" id="lazy" name="personality" value="lazy"> <label for="lazy"> Lazy</label>
+    <input type="checkbox" id="energetic" name="personality" value="energetic"> <label for="energetic"> Energetic</label>
+</fieldset>
+
+Step 62-64
+Now you will add a footer section to the page.
+After the main element, add a footer element.
+Nest a p element.
+Turn the existing freeCodeCamp.org text into a link by enclosing it in an anchor (a) element. The href attribute should be set to https://www.freecodecamp.org.
+
+<footer>
+  <p>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></p>
+</footer>
+
+Step 65-69
+Notice that everything you've added to the page so far is inside the body element. All page content elements that should be rendered to the page go inside the body element. However, other important information goes inside the head element.
+Add a head element above the body element.
+The title element determines what browsers show in the title bar or tab for the page.
+Notice that the entire contents of the page are nested within an html element. All other elements must be descendants of this html element.
+Add the lang attribute with the value en to the opening html tag to specify that the language of the page is English.
+All pages should begin with <!DOCTYPE html>. This special string is known as a declaration and ensures the browser tries to meet industry-wide specifications.
+Add this declaration as the first line of the code.
+You can set browser behavior by adding self-closing meta elements in the head. Here's an example:
+<meta attribute="value">
+Tell the browser to parse the markup into multiple languages by creating a meta element as a child of the head element. Set its charset attribute to UTF-8.
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatPhotoApp</title>
+</head>
