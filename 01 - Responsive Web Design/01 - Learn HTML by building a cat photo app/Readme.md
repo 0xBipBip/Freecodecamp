@@ -63,4 +63,58 @@ Step 10
 You can link to another page with the anchor (a) element. For example:
 <a href='https://freecodecamp.org'></a> would link to freecodecamp.org.
 
+Step 11
+A link's text must be placed between the opening and closing tags of an anchor (a) element. For example, <a href="https://www.freecodecamp.org">click here to go to freeCodeCamp.org</a> is a link with the text click here to go to freeCodeCamp.org.
 
+Step 12
+In the previous step you turned the words link to cat pictures into a link by placing them between opening and closing anchor (a) tags. You can do the same to words inside of an element, such as a p element.
+
+<p>See more <a href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
+
+Step 14
+Add a target attribute with the value _blank to the anchor (a) element's opening tag, so that the link opens in a new tab.
+
+<p>See more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a> in our gallery.</p>
+
+Step 15
+In previous steps you used an anchor element to turn text into a link. Other types of content can also be turned into a link by wrapping it in anchor tags.
+
+Turn the image into a link by surrounding it with necessary element tags. 
+<a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back"></a> 
+
+Step 16
+Before adding any new content, you should make use of a section element to separate the cat photos content from the future content.
+Take your h2, comment, p, and anchor (a) elements and nest them in a section element.
+
+<section>
+  <h2>Cat Photos</h2>
+  <!--TODO: Add link to cat photos-->
+  <p>See more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a> in our gallery.</p>
+  <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back"></a> 
+</section>
+
+Step 19
+When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.
+After the last h2 element of the second section element, add an h3 element.
+
+Step 20 & 21
+After the h3 element with the Things cats love: text, add an unordered list (ul) element. Note that nothing will be displayed at this point.
+Use list item (li) elements to create items in a list. Here is an example of list items in an unordered list:
+
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+
+Steps 22-25
+After the unordered list, add a new image with an src attribute value and its alt attribute.
+The figure element represents self-contained content and will allow you to associate an image with a caption.
+A figure caption (figcaption) element is used to add a caption to describe the image contained within the figure element. For example, <figcaption>A cute cat</figcaption> adds the caption A cute cat.
+Emphasize the word love in the figcaption element by wrapping it in an emphasis em element.
+
+<figure>
+    <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+    <figcaption>Cats <em>love</em> lasagna.</figcaption>
+</figure>
+
+Steps 26-
