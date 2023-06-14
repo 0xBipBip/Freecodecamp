@@ -5,75 +5,73 @@
 /* This is a
 multi-line comment */
 
-// 02 - Declare JavaScript Variables
+/*02 - Declare JavaScript Variables
 
-// JavaScript provides eight different data types which are undefined, null, boolean, string, 
-// symbol, bigint, number, and object.
+JavaScript provides eight different data types which are:
+undefined, null, boolean, string, symbol, bigint, number, and object.
+Variable names can be made up of numbers, letters, and $ or _, but may not contain spaces or 
+start with a number.
+You can declare variables using the var, let, or const keywords. 
 
-// Variable names can be made up of numbers, letters, and $ or _, but may not contain spaces or 
-// start with a number.
+var firstName = 'John';
+var age = 30;
+var isEmployed = true;
 
-// You can declare variables using the var, let, or const keywords. 
+let lastName = 'Doe';
+let height = 180;
+let isStudent = false;
 
-// var firstName = 'John';
-// var age = 30;
-// var isEmployed = true;
+const PI = 3.14;
+const MAX_VALUE = 100;
 
-// let lastName = 'Doe';
-// let height = 180;
-// let isStudent = false;
+Note that var has function scope, while let and const have block scope. Additionally, var 
+variables can be reassigned and hoisted (moved to the top of their scope), while let and const 
+variables are block-scoped and cannot be redeclared in the same scope. */
 
-// const PI = 3.14;
-// const MAX_VALUE = 100;
+/* 03 - Storing Values with the Assignment Operator
 
-// Note that var has function scope, while let and const have block scope. Additionally, var v
-// ariables can be reassigned and hoisted (moved to the top of their scope), while let and const 
-// variables are block-scoped and cannot be redeclared in the same scope.
+You can store a value in a variable with the assignment operator (=).
+myVariable = 5;
+If there are any calculations to the right of the = operator, those are performed before the 
+value is assigned to the variable on the left of the operator. */
 
-// 03 - Storing Values with the Assignment Operator
+/* 04 - Assigning the Value of One Variable to Another
 
-// you can store a value in a variable with the assignment operator (=).
-// myVariable = 5;
-// If there are any calculations to the right of the = operator, those are performed before the 
-// value is assigned to the variable on the left of the operator.
+After a value is assigned to a variable using the assignment operator, you can assign the value 
+of that variable to another variable using the assignment operator.
 
-// 04 - Assigning the Value of One Variable to Another
+var myVar;
+myVar = 5;
+var myNum;
+myNum = myVar; */
 
-// After a value is assigned to a variable using the assignment operator, you can assign the value 
-// of that variable to another variable using the assignment operator.
+/* 05 - Initializing Variables with the Assignment Operator
 
-//     var myVar;
-//     myVar = 5;
-//     var myNum;
-//     myNum = myVar;
+It is common to initialize a variable to an initial value in the same line as it is declared.
+var myVar = 0; */
 
-// 05 - Initializing Variables with the Assignment Operator
+/* 06 - Declare String Variables
 
-// It is common to initialize a variable to an initial value in the same line as it is declared.
-// var myVar = 0;
+You can declare a string variable like this:
+var myName = "your name";
+"your name" is called a string literal. A string literal, or string, is a series of zero or more 
+characters enclosed in single or double quotes. */
 
-// 06 - Declare String Variables
+/* 07 - Understanding Uninitialized Variables
 
-// You can declare a string variable like this:
-//      var myName = "your name";
-// "your name" is called a string literal. A string literal, or string, is a series of zero or more 
-// characters enclosed in single or double quotes.
+When JavaScript variables are declared, they have an initial value of undefined. If you do a 
+mathematical operation on an undefined variable your result will be NaN which means "Not a Number". 
+If you concatenate a string with an undefined variable, you will get a string of undefined. */
 
-// 07 - Understanding Uninitialized Variables
+/* 08 - Understanding Case Sensitivity in Variables
 
-// When JavaScript variables are declared, they have an initial value of undefined. If you do a 
-// mathematical operation on an undefined variable your result will be NaN which means "Not a Number". 
-// If you concatenate a string with an undefined variable, you will get a string of undefined.
-
-// 08 - Understanding Case Sensitivity in Variables
-
-// In JavaScript all variables and function names are case sensitive. This means that capitalization 
-// matters.MYVAR is not the same as MyVar nor myvar. It is possible to have multiple distinct variables 
-// with the same name but different casing. It is strongly recommended that for the sake of clarity, 
-// you do not use this language feature.
-// Best Practice
-// Write variable names in JavaScript in camelCase. In camelCase, multi-word variable names have the 
-// first word in lowercase and the first letter of each subsequent word is capitalized.
+In JavaScript all variables and function names are case sensitive. This means that capitalization 
+matters. MYVAR is not the same as MyVar nor myvar. It is possible to have multiple distinct variables 
+with the same name but different casing. It is strongly recommended that for the sake of clarity, 
+you do not use this language feature.
+Best Practice
+Write variable names in JavaScript in camelCase. In camelCase, multi-word variable names have the 
+first word in lowercase and the first letter of each subsequent word is capitalized. */
 
 // 09 - Explore Differences Between the var and let Keywords
 
@@ -835,4 +833,30 @@ To summarize, parameters are the placeholders defined in the function declaratio
 are the actual values passed to the function when it is called. Parameters are used within the 
 function's body to refer to the arguments supplied during invocation. */
 
-54 - 
+// 54 - Global vs. Local Scope in Functions
+
+// It is possible to have both local and global variables with the same name. When you do this, the 
+// local variable takes precedence over the global variable.
+
+// In this example:
+// const someVar = "Hat";
+// function myFun() {
+//   const someVar = "Head";
+//   return someVar;
+// }
+// The function myFun will return the string Head because the local version of the variable is present.
+
+// PROBLEM: Add a local variable to myOutfit function to override the value of outerWear with the 
+// string sweater.
+
+// SOLUTION:
+// const outerWear = "T-Shirt";
+// function myOutfit() {
+//   // Only change code below this line
+//   let outerWear = "sweater";
+//   // Only change code above this line
+//   return outerWear;
+// }
+// myOutfit();
+
+55 - 
