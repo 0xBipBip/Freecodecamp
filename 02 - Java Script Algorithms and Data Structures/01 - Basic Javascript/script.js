@@ -697,9 +697,142 @@ multi-line comment */
 // dev console.
 // Call the function.
 
-function reusableFunction () {
-    console.log("Hi World");
+// SOLUTION:
+// function reusableFunction () {
+//     console.log("Hi World");
+// }
+// reusableFunction();
+
+// 50 - Passing Values to Functions with Arguments
+
+// Parameters are variables that act as placeholders for the values that are to be input to a function 
+// when it is called. When a function is defined, it is typically defined along with one or more 
+// parameters. The actual values that are input (or "passed") into a function when it is called are 
+// known as arguments.
+
+// Example:
+// Here is a function with two parameters, param1 and param2:
+// function testFun(param1, param2) {
+//   console.log(param1, param2);
+// }
+// Then we can call testFun like this: testFun("Hello", "World");. We have passed two string 
+// arguments, Hello and World. Inside the function, param1 will equal the string Hello and param2 
+// will equal the string World. Note that you could call testFun again with different arguments 
+// and the parameters would take on the value of the new arguments.
+
+// PROBLEM: Create a function called functionWithArgs that accepts two arguments and outputs their 
+// sum to the dev console.
+// Call the function with two numbers as arguments.
+
+// SOLUTION:
+// function functionWithArgs(param1, param2) {
+//     console.log(param1 + param2);
+// }
+// functionWithArgs(4, 6);
+
+// 51 - Return a Value from a Function with Return
+
+// We can pass values into a function with arguments. You can use a return statement to send a value 
+// back out of a function.
+
+// Example:
+// function plusThree(num) {
+//   return num + 3;
+// }
+// const answer = plusThree(5);
+// answer has the value 8.
+// plusThree takes an argument for num and returns a value equal to num + 3.
+
+// PROBLEM: Create a function timesFive that accepts one argument, multiplies it by 5, and returns 
+// the new value.
+
+// SOLUION:
+// function timesFive(arg) {
+//     return arg*5;
+// };
+// timesFive(5);
+
+// 52 - Global Scope and Functions
+
+// In JavaScript, scope refers to the visibility of variables. Variables which are defined outside of 
+// a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.
+// Variables which are declared without the let or const keywords are automatically created in the 
+// global scope. This can create unintended consequences elsewhere in your code or when running a 
+// function again. You should always declare your variables with let or const.
+
+// PROBLEM: 
+// Using let or const, declare a global variable named myGlobal outside of any function. Initialize 
+// it with a value of 10.
+// Inside function fun1, assign 5 to oopsGlobal without using the var, let or const keywords.
+
+// SOLUTION: 
+// let myGlobal = 10;
+// function fun1() {
+//     oopsGlobal = 5;
+// };
+
+// The return statement is used to return a value from a function. If you don't need to return a value 
+// from the function or use the function's result elsewhere in your code, then you don't need to include 
+// a return statement.
+
+// 53 - Local Scope and Functions
+
+// Variables which are declared within a function, as well as the function parameters, have local scope. 
+// That means they are only visible within that function.
+
+// Example:
+// Here is a function myTest with a local variable called loc.
+// function myTest() {
+//   const loc = "foo";
+//   console.log(loc);
+// }
+
+// myTest();
+// console.log(loc);
+// The myTest() function call will display the string foo in the console. The console.log(loc) 
+// line (outside of the myTest function) will throw an error, as loc is not defined outside of the 
+// function.
+
+// PROBLEM:The editor has two console.logs to help you see what is happening. Check the console as 
+// you code to see how it changes. Declare a local variable myVar inside myLocalScope and run the 
+// tests.
+
+// Note: The console will still display ReferenceError: myVar is not defined, but this will not 
+// cause the tests to fail.
+
+// SOLUTION: 
+// function myLocalScope() {
+//     let myVar = "";
+//     console.log('inside myLocalScope', myVar);
+//   }
+//   myLocalScope();
+//   console.log('outside myLocalScope', myVar);
+
+/*
+Function parameters and function arguments are related concepts in JavaScript, but they have distinct 
+meanings.
+
+Function Parameters: Function parameters are the placeholders defined in the function declaration. 
+They are used to specify the input values that a function expects to receive when it is called. 
+Parameters are listed inside the parentheses of the function declaration, separated by commas. They 
+act as local variables within the function's scope, representing the values passed to the function 
+during invocation.
+Example:
+function greet(name) {
+  console.log("Hello, " + name + "!");
 }
+In the above example, name is a parameter of the greet function.
 
-reusableFunction();
+Function Arguments: Function arguments, on the other hand, are the actual values passed to a function 
+when it is invoked or called. They correspond to the function parameters, filling in the values for 
+the placeholders. Arguments are passed inside the parentheses of the function call, separated by 
+commas.
+Example:
+greet("Alice");
+In the above example, "Alice" is an argument passed to the greet function.
 
+To summarize, parameters are the placeholders defined in the function declaration, while arguments 
+are the actual values passed to the function when it is called. Parameters are used within the 
+function's body to refer to the arguments supplied during invocation. */
+
+54 - 
