@@ -600,6 +600,106 @@ multi-line comment */
 
 // SOLUTION: myArray.push(["dog", 3]);
 
-45 - 
+// 45 - Manipulate Arrays With pop Method
 
-console.log(myArray[2]);
+// Another way to change the data in an array is with the .pop() function.
+// .pop() is used to pop a value off of the end of an array. We can store this popped off value 
+// by assigning it to a variable. In other words, .pop() removes the last element from an array 
+// and returns that element.
+// Any type of entry can be popped off of an array - numbers, strings, even nested arrays.
+
+// Example:
+// const threeArr = [1, 4, 6];
+// const oneDown = threeArr.pop();
+// console.log(oneDown);
+// console.log(threeArr);
+// The first console.log will display the value 6, and the second will display the value [1, 4].
+
+// PROBLEM: Use the .pop() function to remove the last item from myArray and assign the popped off 
+// value to a new variable, removedFromMyArray.
+// const myArray = [["John", 23], ["cat", 2]];
+
+// SOLUTION: const removedFromMyArray = myArray.pop();
+
+// 46 - Manipulate Arrays With shift Method
+
+// pop() always removes the last element of an array. What if you want to remove the first?
+// That's where .shift() comes in. It works just like .pop(), except it removes the first element 
+// instead of the last.
+
+// Example:
+// const ourArray = ["Stimpson", "J", ["cat"]];
+// const removedFromOurArray = ourArray.shift();
+// removedFromOurArray would have a value of the string Stimpson, and ourArray would have ["J", ["cat"]].
+
+// Use the .shift() function to remove the first item from myArray and assign the "shifted off" value 
+// to a new variable, removedFromMyArray.
+
+// PROBLEM:
+// const myArray = [["John", 23], ["dog", 3]];
+
+// SOLUTION: const removedFromMyArray = myArray.shift();
+
+// 47 - Manipulate Arrays With unshift Method
+
+// Not only can you shift elements off of the beginning of an array, you can also unshift elements 
+// to the beginning of an array i.e. add elements in front of the array.
+// .unshift() works exactly like .push(), but instead of adding the element at the end of the array, 
+// unshift() adds the element at the beginning of the array.
+
+// Example:
+// const ourArray = ["Stimpson", "J", "cat"];
+// ourArray.shift();
+// ourArray.unshift("Happy");
+// After the shift, ourArray would have the value ["J", "cat"]. After the unshift, ourArray would 
+// have the value ["Happy", "J", "cat"].
+
+// PROBLEM: Add ["Paul", 35] to the beginning of the myArray variable using unshift().
+// const myArray = [["John", 23], ["dog", 3]];
+// myArray.shift();
+
+// SOLUTION: myArray.unshift(["Paul", 35]);
+
+// 48 - Shopping List
+
+// Create a shopping list in the variable myList. The list should be a multi-dimensional array 
+// containing several sub-arrays.
+// The first element in each sub-array should contain a string with the name of the item. 
+// The second element should be a number representing the quantity i.e.
+// ["Chocolate Bar", 15]
+// There should be at least 5 sub-arrays in the list.
+
+// const myList = [];
+
+// SOLUTION: 
+// const myList = [
+//     ["Chocolate Bar", 15],
+//     ["Milk", 2],
+//     ["Apples", 10],
+//     ["Bread", 3],
+//     ["Eggs", 12]
+//   ];
+
+// 49 - Write Reusable JavaScript with Functions
+
+// In JavaScript, we can divide up our code into reusable parts called functions.
+// Here's an example of a function:
+
+// function functionName() {
+//   console.log("Hello World");
+// }
+// You can call or invoke this function by using its name followed by parentheses, like 
+// this: functionName(); Each time the function is called it will print out the message Hello World 
+// on the dev console. All of the code between the curly braces will be executed every time the 
+// function is called.
+
+// PROBLEM: Create a function called reusableFunction which prints the string Hi World to the 
+// dev console.
+// Call the function.
+
+function reusableFunction () {
+    console.log("Hi World");
+}
+
+reusableFunction();
+
