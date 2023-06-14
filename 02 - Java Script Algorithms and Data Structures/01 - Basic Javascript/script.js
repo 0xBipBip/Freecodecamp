@@ -859,4 +859,76 @@ function's body to refer to the arguments supplied during invocation. */
 // }
 // myOutfit();
 
-55 - 
+/* 55 - Understanding Undefined Value returned from a Function
+
+A function can include the return statement but it does not have to. In the case that the function 
+doesn't have a return statement, when you call it, the function processes the inner code but the 
+returned value is undefined.
+
+Example:
+let sum = 0;
+function addSum(num) {
+  sum = sum + num;
+}
+addSum(3);
+addSum is a function without a return statement. The function will change the global sum variable 
+but the returned value of the function is undefined.
+
+PROBLEM: Create a function addFive without any arguments. This function adds 5 to the sum variable, 
+but its returned value is undefined.
+
+let sum = 0;
+function addThree() {
+  sum = sum + 3;
+}
+
+SOLUTION:
+function addFive() {
+  sum = sum + 5
+}
+
+addThree();
+addFive(); */
+
+/* 56 - Assignment with a Returned Value
+
+If you'll recall from our discussion about Storing Values with the Assignment Operator, everything 
+to the right of the equal sign is resolved before the value is assigned. This means we can take 
+the return value of a function and assign it to a variable.
+
+Example:
+Assume we have defined a function sum which adds two numbers together.
+ourSum = sum(5, 12);
+Calling the sum function with the arguments of 5 and 12 produces a return value of 17. This 
+return value is assigned to the ourSum variable.
+
+PROBLEM: 
+Call the processArg function with an argument of 7 and assign its return value to the 
+variable processed.
+
+SOLUTION:  
+let processed = 0;
+function processArg(num) {
+  return (num + 3) / 5;
+}
+processed = processArg(7);
+console.log(processed); */
+
+/* 57 - Stand in Line
+
+In Computer Science a queue is an abstract Data Structure where items are kept in order. New 
+items can be added at the back of the queue and old items are taken off from the front of the queue.
+
+PROBLEM: Write a function nextInLine which takes an array (arr) and a number (item) as arguments.
+Add the number to the end of the array, then remove the first element of the array.
+The nextInLine function should then return the element that was removed.
+
+SOLUTION: 
+let testArr = [10];
+function nextInLine(arr, item) {
+  arr.push(item);
+  return arr.shift();
+}
+nextInLine(testArr,1); */
+
+58 - 
