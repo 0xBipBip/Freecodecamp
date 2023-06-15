@@ -361,3 +361,22 @@ Add one last image under the Desserts heading using the url https://cdn.freecode
 Step 91
 It would be nice if the vertical space between the h2 elements and their associated icons was smaller. The h2 elements have default top and bottom margin space, so you could change the bottom margin of the h2 elements to say 0 or another number.
 There is an easier way, simply add a negative top margin to the img elements to pull them up from their current positions. Negative values are created using a - in front of the value. To complete this project, go ahead and use a negative top margin of 25px in the img type selector.
+
+-----------------------------------------------------------------------------------------------------
+
+In CSS (Cascading Style Sheets), the "display" property is used to control how an HTML element is rendered or displayed on a web page. It specifies the type of box or layout model that should be used to present the element.
+
+The "display" property accepts various values that determine how the element is visually treated. Here are some commonly used values:
+
+block: This value makes an element behave as a block-level element. It creates a rectangular box that takes up the full available width and starts on a new line. Block-level elements can have width, height, padding, and margins applied to them. Examples of block-level elements include <div>, <p>, <h1> to <h6>, and <ul>.
+
+inline: This value makes an element behave as an inline-level element. It does not start on a new line and only takes up the necessary width to contain its content. Inline elements cannot have width, height, padding, or margins applied to them. Examples of inline elements include <span>, <a>, <strong>, and <em>.
+
+inline-block: This value combines the characteristics of both block and inline elements. It behaves like an inline element but allows width, height, padding, and margins to be applied. Inline-block elements do not start on a new line and take up only the necessary width to contain their content.
+
+none: This value hides an element and removes it from the normal document flow. The element is not rendered on the page, and the space it would occupy is collapsed. This can be useful for hiding elements dynamically or temporarily.
+
+flex: This value enables a flex container for an element, establishing a flex formatting context. It allows the element to be flexible and adapt its size and layout based on the available space and the flexbox properties applied to it. Flexbox is commonly used for creating responsive and flexible layouts.
+
+grid: This value enables a grid container for an element, establishing a grid formatting context. It allows the element to be organized in rows and columns, creating a two-dimensional grid layout. Grid layout provides powerful capabilities for designing complex and responsive layouts.
+
