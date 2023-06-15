@@ -1056,29 +1056,280 @@ function testStrict(val) {
 console.log(testStrict(7));
 console.log(testStrict("7")); */
 
-62 - Practice comparing different values
-In the last two challenges, we learned about the equality operator (==) and the strict equality operator (===). Let's do a quick review and practice using these operators some more.
+/* 62 - Practice comparing different values
 
-If the values being compared are not of the same type, the equality operator will perform a type conversion, and then evaluate the values. However, the strict equality operator will compare both the data type and value as-is, without converting one type to the other.
+In the last two challenges, we learned about the equality operator (==) and the strict equality 
+operator (===). Let's do a quick review and practice using these operators some more.
+If the values being compared are not of the same type, the equality operator will perform a type 
+conversion, and then evaluate the values. However, the strict equality operator will compare 
+both the data type and value as-is, without converting one type to the other.
 
-Examples
-
-3 == '3' returns true because JavaScript performs type conversion from string to number. 3 === '3' returns false because the types are different and type conversion is not performed.
-
-Note: In JavaScript, you can determine the type of a variable or a value with the typeof operator, as follows:
+Example:
+3 == '3' returns true because JavaScript performs type conversion from string to 
+number. 3 === '3' returns false because the types are different and type conversion is 
+not performed.
+Note: In JavaScript, you can determine the type of a variable or a value with the typeof operator, 
+as follows:
 
 typeof 3
 typeof '3'
 typeof 3 returns the string number, and typeof '3' returns the string string.
 
-The compareEquality function in the editor compares two values using the equality operator. Modify the function so that it returns the string Equal only when the values are strictly equal.
+PROBLEM: The compareEquality function in the editor compares two values using the equality 
+operator. Modify the function so that it returns the string Equal only when the values 
+are strictly equal.
 
-// Setup
+SOLUTION
 function compareEquality(a, b) {
-  if (a == b) { // Change this line
+  if (a === b) {
     return "Equal";
   }
   return "Not Equal";
 }
+console.log(compareEquality(10, "10"));
+console.log(compareEquality(10, 10)); */
 
-compareEquality(10, "10");
+/* 63 - Comparison with the Inequality Operator
+
+The inequality operator (!=) is the opposite of the equality operator. It means not equal and 
+returns false where equality would return true and vice versa. Like the equality operator, the 
+inequality operator will convert data types of values while comparing.
+
+Example:
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
+0 != false // false
+
+PROBLEM: Add the inequality operator != in the if statement so that the function will return 
+the string Not Equal when val is not equivalent to 99.
+
+SOLUTION: 
+function testNotEqual(val) {
+  if (val != 99) {
+    return "Not Equal";
+  }
+  return "Equal";
+}
+console.log(testNotEqual(99)); */
+
+/* 64 - Comparison with the Strict Inequality Operator
+
+The strict inequality operator (!==) is the logical opposite of the strict equality operator. 
+It means "Strictly Not Equal" and returns false where strict equality would return true and 
+vice versa. The strict inequality operator will not convert data types.
+
+Example:
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
+
+PROBLEM:Add the strict inequality operator to the if statement so the function will return 
+the string Not Equal when val is not strictly equal to 17
+
+SOLUTION:
+function testStrictNotEqual(val) {
+  if (val !== 17) { 
+    return "Not Equal";
+  }
+  return "Equal";
+}
+testStrictNotEqual(17); */
+
+/* 65 - Comparison with the Greater Than Operator
+
+The greater than operator (>) compares the values of two numbers. If the number to the left is 
+greater than the number to the right, it returns true. Otherwise, it returns false.
+Like the equality operator, the greater than operator will convert data types of values while 
+comparing.
+
+Example:
+5   >  3  // true
+7   > '3' // true
+2   >  3  // false
+'1' >  9  // false
+
+PROBLEM: Add the greater than operator to the indicated lines so that the return statements 
+make sense.
+
+SOLUTION: 
+function testGreaterThan(val) {
+  if (val > 100) {
+    return "Over 100";
+  }
+  if (val > 10) { 
+    return "Over 10";
+  }
+  return "10 or Under";
+}
+console.log(testGreaterThan(10));
+console.log(testGreaterThan(11));
+console.log(testGreaterThan(101)); */
+
+/* 66 - Comparison with the Greater Than Or Equal To Operator
+
+The greater than or equal to operator (>=) compares the values of two numbers. If the number 
+to the left is greater than or equal to the number to the right, it returns true. Otherwise, 
+it returns false.
+Like the equality operator, the greater than or equal to operator will convert data types 
+while comparing.
+
+Example:
+6   >=  6  // true
+7   >= '3' // true
+2   >=  3  // false
+'7' >=  9  // false
+
+PROBLEM: Add the greater than or equal to operator to the indicated lines so that the return 
+statements make sense.
+
+SOLUTION:
+function testGreaterOrEqual(val) {
+  if (val >= 20) { 
+    return "20 or Over";
+  }
+  if (val >= 10) { 
+    return "10 or Over";
+  }
+  return "Less than 10";
+}
+console.log(testGreaterOrEqual(20));
+console.log(testGreaterOrEqual(10));
+console.log(testGreaterOrEqual(8)); */
+
+/* 67 - Comparison with the Less Than Operator
+
+The less than operator (<) compares the values of two numbers. If the number to the left is 
+less than the number to the right, it returns true. Otherwise, it returns false. Like the 
+equality operator, the less than operator converts data types while comparing.
+
+Example:
+2   < 5 // true
+'3' < 7 // true
+5   < 5 // false
+3   < 2 // false
+'8' < 4 // false
+
+PROBLEM: Add the less than operator to the indicated lines so that the return statements 
+make sense.
+
+SOLUTION:
+function testLessThan(val) {
+  if (val < 25) {
+    return "Under 25";
+  }
+  if (val < 55) {  
+    return "Under 55";
+  }
+  return "55 or Over";
+}
+console.log(testLessThan(24));
+console.log(testLessThan(25));
+console.log(testLessThan(55)); */
+
+/* 68 - Comparison with the Less Than Or Equal To Operator
+
+The less than or equal to operator (<=) compares the values of two numbers. If the number to the 
+left is less than or equal to the number to the right, it returns true. If the number on the 
+left is greater than the number on the right, it returns false. Like the equality operator, the 
+less than or equal to operator converts data types.
+
+Example:
+4   <= 5 // true
+'7' <= 7 // true
+5   <= 5 // true
+3   <= 2 // false
+'8' <= 4 // false
+
+PROBLEM: Add the less than or equal to operator to the indicated lines so that the return 
+statements make sense.
+
+SOLUTION: 
+function testLessOrEqual(val) {
+  if (val <= 12) {  
+    return "Smaller Than or Equal to 12";
+  }
+  if (val <= 24) { 
+    return "Smaller Than or Equal to 24";
+  }
+  return "More Than 24";
+}
+testLessOrEqual(10); */
+
+/* 69 - Comparisons with the Logical And Operator
+
+Sometimes you will need to test more than one thing at a time. The logical and operator (&&) 
+returns true if and only if the operands to the left and right of it are true.
+The same effect could be achieved by nesting an if statement inside another if.
+
+Example:
+if (num > 5) {
+  if (num < 10) {
+    return "Yes";
+  }
+}
+return "No";
+This code will return Yes if num is greater than 5 and less than 10. The same logic can be written 
+with the logical and operator.
+if (num > 5 && num < 10) {
+  return "Yes";
+}
+return "No";
+
+PROBLEM: Replace the two if statements with one statement, using the && operator, which will 
+return the string Yes if val is less than or equal to 50 and greater than or equal to 25. 
+Otherwise, will return the string No.
+
+SOLUTION:
+function testLogicalAnd(val) {
+  if (val <= 50 && val >= 25) {
+      return "Yes";
+  }
+  return "No";
+}
+testLogicalAnd(10);
+*/
+
+/* 70 - Comparisons with the Logical Or Operator
+
+The logical or operator (||) returns true if either of the operands is true. Otherwise, it 
+returns false.
+The logical or operator is composed of two pipe symbols: (||). This can typically be found 
+between your Backspace and Enter keys.
+The pattern below should look familiar from prior waypoints.
+
+Example:
+if (num > 10) {
+  return "No";
+}
+if (num < 5) {
+  return "No";
+}
+return "Yes";
+This code will return Yes if num is between 5 and 10 (5 and 10 included). The same logic can be 
+written with the logical or operator.
+if (num > 10 || num < 5) {
+  return "No";
+}
+return "Yes";
+
+PROBLEM: Combine the two if statements into one statement which returns the string Outside 
+if val is not between 10 and 20, inclusive. Otherwise, return the string Inside.
+
+SOLUTION: 
+function testLogicalOr(val) {
+  if (val < 10 || val > 20) {
+    return "Outside";
+  }
+  return "Inside";
+}
+testLogicalOr(15); */
+
+/* 71 - */
+
+/* 72 73 74 75 76 77 78 79 */
+
+
+
+
