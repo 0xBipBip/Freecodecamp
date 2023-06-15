@@ -1,5 +1,4 @@
 CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.
-
 In this course, you'll learn CSS by designing a menu page for a cafe webpage.
 
 Step 1-3
@@ -53,6 +52,10 @@ Center your h1 element by setting its text-align property to the value center.
 Step 12
 In the previous step, you used a type selector to style the h1 element. Center the h2 and p elements by adding a new type selector for each one to the existing style element.
 
+h1, h2, p {
+    text-align: center;
+}
+
 Step 13
 You now have three type selectors with the exact same styling. You can add the same group of styles to many elements by creating a list of selectors. Each selector is separated with commas like this:
 
@@ -72,6 +75,9 @@ Now that you have the CSS in the styles.css file, go ahead and remove the style 
 
 Step 16
 Now you need to link the styles.css file so the styles will be applied again. Nest a self-closing link element in the head element. Give it a rel attribute value stylesheet and an href attribute value of styles.css.
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
 Step 17
 For the styling of the page to look similar on mobile as it does on a desktop or laptop, you need to add a meta element with a special content attribute.
@@ -79,14 +85,32 @@ For the styling of the page to look similar on mobile as it does on a desktop or
 Add the following within the head element:
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-Step 18
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+Step 18,19
 The text is centered again so the link to the CSS file is working. Add another style to the file that changes the background-color property to brown for the body element.
 
-Step 19
 That brown background makes it hard to read the text. Change the body element's background color to be burlywood so it has some color but you are still be able to read the text.
+
+body {
+    background-color: burlywood
+} 
 
 Step 20
 The div element is used mainly for design layout purposes unlike the other content elements you have used so far. Add a div element inside the body element and then move all the other elements inside the new div.
+
+<body>
+    <div class="menu">
+        <main></main>
+        <hr class="bottom-line">
+        <footer></footer>
+    </div>
+</body>
 
 Step 21
 The goal now is to make the div not take up the entire width of the page. The CSS width property is perfect for this. Create a new type selector in the style sheet that gives your div element a width of 300px.
@@ -113,19 +137,38 @@ So far you have been using type selectors to style elements. A class selector is
 }
 Change the existing div selector into a class selector by replacing div with a class named menu.
 
+.menu { 
+    width: 80%;
+    max-width: 500px;
+    background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
 Step 27
 To apply the class's styling to the div element, add a class attribute to the div element's opening tag and set its value to menu.
+<div class="menu">
 
 Step 28
 Since the cafe's main product for sale is coffee, you could use an image of coffee beans for the background of the page.
 
 Delete the comment and its contents inside the body type selector. Now add a background-image property and set its value to url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg).
 
-Step 29
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    font-family: sans-serif;
+    padding: 20px;
+} 
+
+Step 29,30
 It’s looking good. Time to start adding some menu items. Add an empty article element under the Coffee heading. It will contain a flavor and price of each coffee you currently offer.
 
-Step 30
 article elements commonly contain multiple elements that have related information. In this case, it will contain a coffee flavor and a price for that flavor. Nest two p elements inside your article element. The first one's text should be French Vanilla, and the second's text 3.00.
+
+<article class="item">
+    <p class="flavor">French Vanilla</p><p class="price">3.00</p>
+</article>
 
 Step 31
 Starting below the existing coffee/price pair, add the following coffee and prices using article elements with two nested p elements inside each. As before, the first p element's text should contain the coffee flavor and the second p element's text should contain the price.
@@ -135,33 +178,50 @@ Pumpkin Spice 3.50
 Hazelnut 4.00
 Mocha 4.50
 
-Step 32
+Step 32-35
 The flavors and prices are currently stacked on top of each other and centered with their respective p elements. It would be nice if the flavor was on the left and the price was on the right.
 
 Add the class name flavor to the French Vanilla p element.
-
-Step 33
 Using your new flavor class as a selector, set the text-align property's value to left.
-
-Step 34
+.flavor {
+    text-align: left;
+    width: 75%;
+}
 Next, you want to align the price to the right. Add a class named price to your p element that has 3.00 as its text.
-
-Step 35
 Now align the text to the right for the elements with the price class.
+.price {
+    text-align: right;
+    width: 25%;
+}
 
 Step 36
 That is kind of what you want, but now it would be nice if the flavor and price were on the same line. p elements are block-level elements, so they take up the entire width of their parent element.
 
 To get them on the same line, you need to apply some styling to the p elements so they behave more like inline elements. To do that, start by adding a class attribute with the value item to the first article element under the Coffee heading.
+<article class="item">
 
 Step 37
 The p elements are nested in an article element with the class attribute of item. You can style all the p elements nested anywhere in elements with a class named item like this:
-
 .item p { }
+
 Using the above selector, add a display property with value inline-block so the p elements behave more like inline elements.
+.item p {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
 
 Step 38
 That's closer, but the price didn't stay over on the right. This is because inline-block elements only take up the width of their content. To spread them out, add a width property to the flavor and price class selectors that have a value of 50% each.
+.flavor, .dessert {
+    text-align: left;
+    width: 75%;
+}
+.price {
+    text-align: right;
+    width: 25%;
+}
 
 Step 39
 Well that did not work. Styling the p elements as inline-block and placing them on separate lines in the code creates an extra space to the right of the first p element, causing the second one to shift to the next line. One way to fix this is to make each p element's width a little less than 50%.
@@ -172,18 +232,17 @@ Step 40
 That worked, but there is still a little space on the right of the price.
 
 You could keep trying various percentages for the widths. Instead, use the back space key on your keyboard to move the p element with the class price next to the p element with the class flavor so that they are on the same line in the editor. Make sure there is no space between them.
+ BEFORE:
  <p class="flavor">French Vanilla</p>
  <p class="price">3.00</p>
 
 SOLUTION: <p class="flavor">French Vanilla</p><p class="price">3.00</p>
 
-Step 41
+Step 41-43
 Now go ahead and change both the flavor and price class' widths to be 50% again.
 
-Step 42
 Now that you know it works, you can change the remaining article and p elements to match the first set. Start by adding the class item to the other article elements.
 
-Step 43
 Next, position the other p elements to be on the same line with no space between them.
 
 Step 44
@@ -194,25 +253,27 @@ If you make the width of the page preview smaller, you will notice at some point
 
 Since you know the prices on the right have significantly fewer characters, change the flavor class width value to be 75% and the price class width value to be 25%.
 
-Step 46
+Step 46-49
 You will come back to styling the menu in a few steps, but for now, go ahead and add a second section element below the first for displaying the desserts offered by the cafe.
 
-Step 47
 Add an h2 element in the new section and give it the text Desserts.
 
-Step 48
 Add an empty article element under the Desserts heading. Give it a class attribute with the value item.
 
-Step 49
 Nest two p elements inside your article element. The first one's text should be Donut, and the second's text 1.50. Put both of them on the same line making sure there is no space between them.
 
 Step 50
 For the two p elements you just added, add dessert as the value of the first p element's class attribute and the value price as the second p elements class attribute.
+<p class="dessert">Donut</p><p class="price">1.50</p>
 
 Step 51
 Something does not look right. You added the correct class attribute value to the p element with Donut as its text, but you have not defined a selector for it.
 
 The CSS rule for the flavor class already sets the properties you want. Add the dessert class as an additional selector for this CSS rule.
+.flavor, .dessert {
+    text-align: left;
+    width: 75%;
+}
 
 Step 52
 Below the dessert you just added, add the rest of the desserts and prices using three more article elements, each with two nested p elements. Each element should have the correct dessert and price text, and all of them should have the correct classes.
@@ -221,15 +282,21 @@ Cherry Pie 2.75
 Cheesecake 3.00
 Cinnamon Roll 2.50
 
-Step 53
+Step 53-55
 You can give your menu some space between the content and the sides with various padding properties.
 Give the menu class a padding-left and a padding-right with the same value 20px.
 
-Step 54
 That looks better. Now try to add the same 20px padding to the top and bottom of the menu.
 
-Step 55
 Since all 4 sides of the menu have the same internal spacing, go ahead and delete the four properties and use a single padding property with the value 20px.
+.menu { 
+    width: 80%;
+    max-width: 500px;
+    background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
 
 Step 56
 The current width of the menu will always take up 80% of the body element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
