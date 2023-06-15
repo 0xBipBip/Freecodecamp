@@ -307,49 +307,60 @@ You can change the font-family of text, to make it look different from the defau
 
 Change all the text in your body, by adding a font-family property with the value sans-serif. This is a fairly common font that is very readable.
 
-Step 58
+Step 58,59
 It is a bit boring for all the text to have the same font-family. You can still have the majority of the text sans-serif and make just the h1 and h2 elements different using a different selector.
-
 Style both the h1 and the h2 elements so that only these elements' text use Impact font.
 
-Step 59
 You can add a fallback value for the font-family by adding another font name separated by a comma. Fallbacks are used in instances where the initial is not found/available.
 
 Add the fallback font serif after the Impact font.
+h1, h2 {
+    font-family: Impact, serif;
+}
 
-Step 60
+Step 60,61
 Make the Est. 2020 text italicized by creating an established class selector and giving it the font-style property with the value italic.
 
-Step 61
 Now apply the established class to the Est. 2020 text.
+<p class="established">Est. 2020</p>
+.established { 
+    font-style: italic;
+}
 
 Step 62
 The typography of heading elements (e.g. h1, h2) is set by default values of users' browsers.
 Add two new type selectors (h1 and h2). Use the font-size property for both, but use the value 40px for the h1 and 30px for the h2.
 
-Step 63
+Step 63-65
 Add a footer element below the main element, where you can add some additional information.
 
-Step 64
 Inside the footer, add a p element. Then, nest an anchor (a) element in the p that links to https://www.freecodecamp.org and has the text Visit our website.
 
-Step 65
 Add a second p element below the one with the link and give it the text 123 Free Code Camp Drive.
+
+<footer>
+    <p><a href="https://www.freecodecamp.org">Visit our website</a></p>
+    <p class="address">123 Free Code Camp Drive</p>
+</footer>
 
 Step 66
 You can use an hr element to display a divider between sections of different content.
 First, add an hr element between the p element with the class established and the first section element. Note that hr elements are self closing.
 
-Step 67
+Step 67-69
 The default properties of an hr element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the height property.
 Change the height of the hr element to be 3px.
 
-Step 68
 Change the background color of the hr element to brown so it matches the color of the coffee beans.
 
-Step 69
 Notice the grey color along the edges of the line. Those edges are known as borders. Each side of an element can have a different color or they can all be the same.
 Make all the edges of the hr element the same color as the background of it using the border-color property.
+
+hr {
+    height: 2px;
+    background-color: brown;
+    border-color: brown;
+}
 
 Step 70
 Notice how the thickness of the line looks bigger? The default value of a property named border-width is 1px for all edges of hr elements. By changing the border to the same color as the background, the total height of the line is 5px (3px plus the top and bottom border width of 1px).
@@ -360,6 +371,11 @@ Go ahead and add another hr element between the main element and the footer elem
 
 Step 72
 To create a little more room around the menu, add 20px of space on the inside of the body element by using the padding property.
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    font-family: sans-serif;
+    padding: 20px;
+} 
 
 Step 73
 Focusing on the menu items and prices, there is a fairly large gap between each line.
@@ -428,6 +444,13 @@ Add one last image under the Desserts heading using the url https://cdn.freecode
 Step 91
 It would be nice if the vertical space between the h2 elements and their associated icons was smaller. The h2 elements have default top and bottom margin space, so you could change the bottom margin of the h2 elements to say 0 or another number.
 There is an easier way, simply add a negative top margin to the img elements to pull them up from their current positions. Negative values are created using a - in front of the value. To complete this project, go ahead and use a negative top margin of 25px in the img type selector.
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -25px;
+}
 
 -----------------------------------------------------------------------------------------------------
 
