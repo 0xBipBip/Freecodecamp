@@ -183,3 +183,212 @@ There are two main color models: the additive RGB (red, green, blue) model used 
 In this project, you'll work with the RGB model. This means that colors begin as black, and change as different levels of red, green, and blue are introduced. An easy way to see this is with the CSS rgb function.
 
 Create a new CSS rule that targets the class container and set its background-color to black with rgb(0, 0, 0).
+
+.container {
+    background-color: rgb(0, 0, 0);
+}
+
+Step 22
+A function is a piece of code that can take an input and perform a specific action. The CSS rgb function accepts values, or arguments, for red, green, and blue, and produces a color:
+rgb(red, green, blue);
+Each red, green, and blue value is a number from 0 to 255. 0 means that there's 0% of that color, and is black. 255 means that there's 100% of that color.
+
+In the .one CSS rule, replace the color keyword red with the rgb function. For the rgb function, set the value for red to 255, the value for green to 0, and the value for blue to 0.
+.one {
+    background-color: rgb(255, 0, 0);
+}
+
+Step 23
+Notice that the background-color for your marker is still red. This is because you set the red value of the rgb function to the max of 255, or 100% red, and set both the green and blue values to 0.
+
+Now use the rgb function to set the other colors.
+In the .two CSS rule, use the rgb function to set the background-color to the max value for green, and 0 for the other values. And in the .three CSS rule, use the rgb function to set the background-color to the max value for blue, and 0 for the other values.
+.two {
+    background-color: rgb(0, 255, 0);
+}
+.three {
+    background-color: rgb(0, 0, 255);
+}
+
+Step 24
+While the red and blue markers look the same, the green one is much lighter than it was before. This is because the green color keyword is actually a darker shade, and is about halfway between black and the maximum value for green.
+
+In the .two CSS rule, set the green value in the rgb function to 127 to lower its intensity.
+
+.two {
+    background-color: rgb(0, 127, 0);
+}
+
+Step 25
+Now add a little more vertical space between your markers and the edge of the container element they're in.
+
+In the .container CSS rule, use the shorthand padding property to add 10px of top and bottom padding, and set the left and right padding to 0. This works similarly to the shorthand margin property you used earlier.
+.container {
+    padding: 10px 0px;
+}
+
+Step 26
+In the additive RGB color model, primary colors are colors that, when combined, create pure white. But for this to happen, each color needs to be at its highest intensity.
+
+Before you combine colors, set your green marker back to pure green. For the rgb function in the .two CSS rule, set green back to the max value of 255.
+.two {
+    background-color: rgb(0, 255, 0);
+}
+
+Step 27
+Now that you have the primary RGB colors, it's time to combine them.
+For the rgb function in the .container rule, set the red, green, and blue values to the max of 255.
+.container {
+    background-color: rgb(255, 255, 255);
+}
+
+Step 28
+Secondary colors are the colors you get when you combine primary colors. You might have noticed some secondary colors in the last step as you changed the red, green, and blue values.
+
+To create the first secondary color, yellow, update the rgb function in the .one CSS rule to combine pure red and pure green.
+.one {
+    background-color: rgb(255, 255, 0);
+}
+
+Step 29
+To create the next secondary color, cyan, update the rgb function in the .two CSS rule to combine pure green and pure blue.
+.two {
+    background-color: rgb(0, 255, 255);
+}
+
+Step 30
+To create the final secondary color, magenta, update the rgb function in the .three CSS rule to combine pure blue and pure red.
+.three {
+    background-color: rgb(255, 0, 255);
+}
+
+Step 31
+Now that you're familiar with secondary colors, you'll learn how to create tertiary colors. Tertiary colors are created by combining a primary with a nearby secondary color.
+
+To create the tertiary color orange, update the rgb function in the .one CSS rule so that red is at the max value, and set green to 127.
+.one {
+    background-color: rgb(255, 127, 0);
+}
+
+Step 32
+Notice that, to create orange, you had to increase the intensity of red and decrease the intensity of the green rgb values. This is because orange is the combination of red and yellow, and falls between the two colors on the color wheel.
+
+To create the tertiary color spring green, combine cyan with green. Update the rgb function in the .two CSS rule so that green is at the max value, and set blue to 127.
+.two {
+    background-color: rgb(0, 255, 127);
+}
+
+Step 33
+And to create the tertiary color violet, combine magenta with blue. Update the rgb function in the .three CSS rule so that blue is at the max value, and set red to 127.
+.three {
+    background-color: rgb(127, 0, 255);
+}
+
+Step 34
+There are three more tertiary colors: chartreuse green (green + yellow), azure (blue + cyan), and rose (red + magenta).
+
+To create chartreuse green, update the rgb function in the .one CSS rule so that red is at 127, and set green to the max value.
+
+For azure, update the rgb function in the .two CSS rule so that green is at 127 and blue is at the max value.
+
+And for rose, which is sometimes called bright pink, update the rgb function in the .three CSS rule so that blue is at 127 and red is at the max value.
+.one {
+    background-color: rgb(127, 255, 0);
+}
+.two {
+    background-color: rgb(0, 127, 255);
+}
+.three {
+    background-color: rgb(255, 0, 127);
+}
+
+Step 35
+Now that you've gone through all the primary, secondary, and tertiary colors on a color wheel, it'll be easier to understand other color theory concepts and how they impact design.
+
+First, in the CSS rules .one, .two, and .three, adjust the values in the rgb function so that the background-color of each element is set to pure black. Remember that the rgb function uses the additive color model, where colors start as black and change as the values of red, green, and blue increase.
+.one {
+    background-color: rgb(0, 0, 0);
+}
+.two {
+    background-color: rgb(0, 0, 0);
+}
+.three {
+    background-color: rgb(0, 0, 0);
+}
+
+Step 36
+A color wheel is a circle where similar colors, or hues, are near each other, and different ones are further apart. For example, pure red is between the hues rose and orange.
+
+Two colors that are opposite from each other on the color wheel are called complementary colors. If two complementary colors are combined, they produce gray. But when they are placed side-by-side, these colors produce strong visual contrast and appear brighter.
+
+In the rgb function for the .one CSS rule, set the red value to the max of 255 to produce pure red. In the rgb function for .two CSS rule, set the values for green and blue to the max of 255 to produce cyan.
+.one {
+    background-color: rgb(255, 0, 0);
+}
+.two {
+    background-color: rgb(0, 255, 255);
+}
+
+Step 37
+Notice that the red and cyan colors are very bright right next to each other. This contrast can be distracting if it's overused on a website, and can make text hard to read if it's placed on a complementary-colored background.
+
+It's better practice to choose one color as the dominant color, and use its complementary color as an accent to bring attention to certain content on the page.
+
+First, in the h1 rule, use the rgb function to set its background-color to cyan.
+h1 {
+    text-align: center;
+    background-color: rgb(0, 255, 255);
+}
+
+Step 38
+Next, in the .one CSS rule, use the rgb function to set the background-color to black. And in the .two CSS rule, use the rgb function to set the background-color to red.
+.one {
+    background-color: rgb(0, 0, 0);
+}
+.two {
+    background-color: rgb(255, 0, 0);
+}
+
+Step 39
+Notice how your eyes are naturally drawn to the red color in the center? When designing a site, you can use this effect to draw attention to important headings, buttons, or links.
+There are several other important color combinations outside of complementary colors, but you'll learn those a bit later.
+For now, use the rgb function in the .two CSS rule to set the background-color to black.
+.two {
+    background-color: rgb(0, 0, 0);
+}
+
+Step 40
+And in the h1 CSS rule, remove the background-color property and value to go back to the default white color.
+
+Step 41
+Now it's time to add other details to the markers, starting with the first one.
+In the first marker div element, change the class one to red.
+<div class="marker red"></div>
+
+Step 42,43
+Update the .one CSS rule to target the new red class.
+And update the rgb function in the .red CSS rule so that the red value is at the max.
+.red {
+    background-color: rgb(255, 0, 0);
+}
+
+Step 44
+Next, change the class two to green in the second marker div, and the class three to blue in the third marker div.
+<div class="marker green"></div>
+<div class="marker blue"></div>
+
+Step 45
+Update the CSS class selector .two so it targets the new green class. And update the .three class selector so it targets the new blue class.
+.green {
+    background-color: rgb(0, 0, 0);
+}
+.blue {
+    background-color: rgb(0, 0, 0);
+}
+
+Step 46
+A very common way to apply color to an element with CSS is with hexadecimal or hex values. While hex values sound complicated, they're really just another form of RGB values.
+
+Hex color values start with a # character and take six characters from 0-9 and A-F. The first pair of characters represent red, the second pair represent green, and the third pair represent blue. For example, #4B5320.
+
+In the .green class selector, set the background-color property to a hex color code with the values 00 for red, FF for green, and 00 blue.
