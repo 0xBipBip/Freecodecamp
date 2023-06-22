@@ -115,3 +115,213 @@ At this point, you should be able to submit the form. However, you might notice 
 To make the form more interactive, add the required attribute to the input elements in the first fieldset.
 
 Now, if you try to submit the form without filling in the required fields, you will see an error message.
+
+<fieldset>
+        <label for="first-name">Enter Your First Name: <input id="first-name" type="text" required /></label>
+        <label for="last-name">Enter Your Last Name: <input id="last-name" type="text" required /></label>
+        <label for="email">Enter Your Email: <input id="email" type="email" required /></label>
+        <label for="new-password">Create a New Password: <input id="new-password" type="password" required /></label>
+</fieldset>
+
+Step 22
+Certain type attribute values come with built-in form validation. For example, type="email" requires that the value be a valid email address.
+
+Add custom validation to the password input element, by adding a minlength attribute with a value of 8. Doing so prevents inputs of less than 8 characters being submitted.
+
+<label for="new-password">Create a New Password: <input id="new-password" type="password" minlength="8" required /></label>
+
+Step 23
+With type="password" you can use the pattern attribute to define a regular expression that the password must match to be considered valid.
+
+Add a pattern attribute to the password input element to require the input match: [a-z0-5]{8,}
+
+The above is a regular expression which matches eight or more lowercase letters or the digits 0 to 5. Then, remove the minlength attribute, and try it out.
+
+<label for="new-password">Create a New Password: <input id="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+
+Step 24
+Let us go to the next part of the registration form. This section will ask for the type of account the user is opening, and will confirm the user has read the terms and conditions.
+
+Start by adding three label elements to the second fieldset.
+
+Step 25
+Users will be allowed to choose either a Personal Account or Business Account.
+To do this, within each of the first two label elements, add one input element with type="radio".
+  <label><input type="radio" /></label>
+  <label><input type="radio" /></label>
+  <label></label>
+
+Step 26
+For the terms and conditions, add an input with a type of checkbox to the third label element. Make this input element required because users should not sign up without reading the terms and conditions.
+<label><input type="checkbox" required></label>
+
+Step 27
+Within each corresponding label element, and immediately after the input element, add a space and add the following text:
+
+Personal Account
+Business Account
+I accept the terms and conditions
+
+<label><input type="radio" /> Personal Account</label>
+<label><input type="radio" /> Business Account</label>
+<label><input type="checkbox" required /> I accept the terms and conditions</label>
+
+Step 28
+You only want one radio input to be selectable at a time. However, the form does not know the radio inputs are related.
+
+To relate the radio inputs, give them the same name attribute with a value of account-type. Now, it is not possible to select both radio inputs at the same time.
+<label><input type="radio" name="account-type" /> Personal Account</label>
+<label><input type="radio" name="account-type" /> Business Account</label>
+
+Step 29
+Follow accessibility best practices by linking the input elements and the label elements in the second fieldset.
+
+Use personal-account, business-account, and terms-and-conditions as values for the respective id attributes.
+
+Step 30
+To finish this fieldset off, link the text terms and conditions in the third label to the following location:
+
+https://www.freecodecamp.org/news/terms-of-service/
+
+<label for="terms-and-conditions">
+    <input id="terms-and-conditions" type="checkbox" required /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+</label>
+
+Step 31
+Moving on to the final fieldset. What if you wanted to allow a user to upload a profile picture?
+Well, the input type file allows just that. Add a label with the text Upload a profile picture: , and nest an input accepting a file upload.
+<label>Upload a profile picture: <input type="file" /></label>
+
+Step 32
+Add another label after the first, with the text Input your age (years): . Then, nest an input with the type of number.
+
+Next, add a min attribute to the input with a value of 13 because users under the age of 13 should not register. Also, users probably will not be over the age of 120; add a max attribute with a value of 120.
+
+Now, if someone tries to submit the form with values outside of the range, a warning will appear, and the form will not submit. Give it a try.
+<label>Input your age (years): <input type="number" min="13" max="120"></label>
+
+Step 33
+Adding a dropdown to the form is easy with the select element. The select element is a container for a group of option elements, and the option element acts as a label for each dropdown option. Both elements require closing tags.
+
+Start by adding a select element below the two label elements. Then nest 5 option elements within the select element.
+ <select name="" id="">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+</select>
+
+Step 34
+Nest the select element (with its option elements) within a label element with the text How did you hear about us?. The text should come before the select element.
+
+Step 35
+The dropdown options are currently empty. To give them content, add the following text to each subsequent option element:
+(select one)
+freeCodeCamp News
+freeCodeCamp YouTube Channel
+freeCodeCamp Forum
+Other
+
+Step 36
+Submitting the form with an option selected would not send a useful value to the server. As such, each option needs to be given a value attribute. Without which, the text content of the option will be submitted to the server.
+
+Give the first option a value of "", and the subsequent option elements value attributes from 1 to 4.
+<option value="">(select one)</option>
+<option value="1">freeCodeCamp News</option>
+<option value="2">freeCodeCamp YouTube Channel</option>
+<option value="3">freeCodeCamp Forum</option>
+<option value="4">Other</option>
+
+Step 37
+The textarea element acts like an input element of type text, but comes with the added benefit of being able to receive multi-line text, and an initial number of text rows and columns.
+
+Users will be able to register with a bio. Add a label with the text Provide a bio: at the end of the fieldset. Add a textarea element inside the label element. Note that the textarea requires a closing tag.
+
+Step 38
+Link the applicable form elements and their label elements together.
+Use profile-picture, age, referrer, and bio as values for the respective id attributes.
+
+Step 39
+The textarea appears too small. To give it an initial size, you can add the rows and cols attributes.
+Add an initial size of 3 rows and 30 columns.
+
+Step 40
+To give Campers an idea of what to put in their bio, the placeholder attribute is used. The placeholder accepts a text value, which is displayed until the user starts typing.
+
+Give the textarea a placeholder of I like coding on the beach....
+<textarea name="" id="bio" cols="30" rows="3" placeholder="I like coding on the beach...." ></textarea>
+
+Step 41
+With form submissions, it is useful, and good practice, to provide each submittable element with a name attribute. This attribute is used to identify the element in the form submission.
+
+Give each submittable element a unique name attribute of your choosing, except for the two radio inputs.
+
+<fieldset>
+            <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
+            <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
+            <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
+            <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+          </fieldset>
+        <fieldset>
+            <label for="personal-account"><input id="personal-account" type="radio" name="account-type" /> Personal Account</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business Account</label>
+        <label for="terms-and-conditions">
+          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+        </label>
+        </fieldset>
+        <fieldset>
+            <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
+        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
+        <label for="referrer">How did you hear about us?
+          <select id="referrer" name="referrer">
+            <option value="">(select one)</option>
+            <option value="1">freeCodeCamp News</option>
+            <option value="2">freeCodeCamp YouTube Channel</option>
+            <option value="3">freeCodeCamp Forum</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+        <label for="bio">Provide a bio:
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        </label>
+        </fieldset>
+
+Step 42
+The HTML for the registration form is finished. Now, you can spruce it up a bit.
+Start by changing the font to Tahoma, and the font size to 16px in the body.
+
+Step 43
+Center the h1 and p elements by giving them a margin of 1em auto. Then, align their text in the center as well.
+
+Step 44
+Center the form element, by giving it a margin of 0 auto. Then, fix its size to a maximum width of 500px, and a minimum width of 300px. In between that range, allow it to have a width of 60vw.
+
+Step 45
+During development, it is useful to see the fieldset default borders. However, they make the content appear too separated.
+Remove the border, and add 2rem of padding only to the top and bottom of each fieldset. Be sure to remove the padding from the left and right.
+
+Step 46
+To give the fieldset elements a bit of separation, select them and give them a border-bottom of 3px solid #3b3b4f.
+fieldset {
+  border-bottom: 3px solid #3b3b4f;
+}
+
+Step 47
+The border of the last fieldset element looks a little out of place. You can select the last element of a specific type using the last-of-type CSS pseudo-class, like this:
+
+p:last-of-type { }
+That will select the last p element. Create a new selector that targets the last fieldset element and set its border-bottom to none.
+fieldset:last-of-type {
+    border-bottom: none;
+  }
+
+Step 48
+It would be nicer to have the label text appear above the form elements.
+Select all input, textarea, and select elements, and make them take up the full width of their parent elements.
+Also, add 10px of margin to the top of the selected elements. Set the other margins to 0.
+input, textarea, select {
+    width: 100%;
+    margin: 10px 0 0 0;  
+  }
+
