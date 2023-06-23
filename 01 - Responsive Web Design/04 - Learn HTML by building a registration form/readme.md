@@ -325,3 +325,110 @@ input, textarea, select {
     margin: 10px 0 0 0;  
   }
 
+Step 49
+For the second fieldset, you want the input and label text to appear on the same line.
+Start, by giving the input elements in the second fieldset a class of inline.
+
+Step 50
+Select only the .inline elements, and give them width of unset. This will remove the earlier rule which set all the input elements to width: 100%.
+
+Step 51
+Add some space between the .inline elements and the label text, by giving a right margin of 0.5em. Also, set all the other margin to 0.
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+}
+
+Step 52
+If you look close enough, you will notice the .inline elements are too high on the line.
+To combat this, set the vertical-align property to middle.
+vertical-align: middle;
+
+Step 53
+To make the input and textarea elements blend in with the background theme, set their background-color to #0a0a23. Then, give them a 1px, solid border with a color of #0a0a23.
+input, textarea {
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+}
+
+Step 54
+Currently, if you type in the input or textarea elements, you will not be able to see the text. Also, their height is too small to be easy to use.
+
+Fix this, by setting the color to #ffffff, and setting their min-height to 2em.
+input, textarea {
+  color: #ffffff;
+  min-height: 2em;
+}
+
+Step 55
+You want the select element to remain with a white background, but now it is not getting the same min-height as the input and textarea elements.
+
+Move the min-height property and value so that all three element types have the same min-height value, and the select element still has a white background.
+
+Hint
+You should remove the min-height declaration from the input, textarea selector.
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 2em;
+}
+
+Step 56
+To style the submit button, you can use an attribute selector, which selects an element based on the given attribute value. Here is an example:
+
+input[name="password"]
+The above selects input elements with a name attribute value of password.
+
+Now, use the attribute selector to style the submit button with a display of block, and a width of 60%.
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+}
+
+Step 57
+With a display of block the submit button sits flush against the left edge of its parent.
+Use the same technique used to center the form to center the submit button.
+  margin: 0 auto;
+
+Step 58
+To make the submit button look more in line with the rest of the form, give it the same height as the other fields (2em). Also, increase the font-size to 1.1rem.
+  height: 2em;
+  font-size: 1.1rem;
+
+Step 59
+To make the submit button appear more distinct, give it a background-color of #3b3b4f, and a border-color of white.
+  background-color: #3b3b4f;
+  border-color: white;
+
+Step 60
+Lastly, for the submit button, you want to separate it from the fieldset above, and adjust its width to never be below 300px.
+
+Change the margin property to include 1em on the top and bottom, while leaving the right and left margins set to auto. Then set the width as described above.
+  margin: 1em auto;
+  min-width: 300px;
+
+Step 61
+Most browsers inject their own default CSS properties and values for different elements. If you look closely, you might be able to notice the file input is smaller than the other text input elements. By default, a padding of 1px 2px is given to input elements you can type in.
+
+Using another attribute selector, style the input with a type of file to be the same padding as the other input elements.
+input[type="file"] {
+  padding: 1px 2px;
+}
+
+Step 62
+Speaking of padding, the submit button is sitting at the bottom of the form element. Add 2em of padding only to the bottom of the form.
+form {
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+
+Step 63
+Last, but not least, change the text color of the terms and conditions link to #dfdfe2.
+Well done! You have completed the final part of the Registration Form practice project.
