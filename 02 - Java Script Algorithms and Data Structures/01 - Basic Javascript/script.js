@@ -1509,9 +1509,10 @@ function golfScore(par, strokes) {
 console.log(golfScore(4,8 )); */
 
 /*76 - Selecting from Many Options with Switch Statements
-If you need to match one value against many options, you can use a switch statement. A switch statement compares the value to the 
-case statements which define various possible values. Any valid JavaScript statements can be executed inside a case block and 
-will run from the first matched case value until a break is encountered.
+If you need to match one value against many options, you can use a switch statement. A switch 
+statement compares the value to the case statements which define various possible values. Any 
+valid JavaScript statements can be executed inside a case block and will run from the first matched 
+case value until a break is encountered.
 
 Here is an example of a switch statement:
 
@@ -1523,8 +1524,8 @@ switch (fruit) {
     console.log("The fruit is an orange");
     break;
 }
-case values are tested with strict equality (===). The break tells JavaScript to stop executing statements. If the break is 
-omitted, the next statement will be executed.
+case values are tested with strict equality (===). The break tells JavaScript to stop executing 
+statements. If the break is omitted, the next statement will be executed.
 
 PROBLEM: 
 Write a switch statement which tests val and sets answer for the following conditions:
@@ -1532,18 +1533,302 @@ Write a switch statement which tests val and sets answer for the following condi
 2 - beta
 3 - gamma
 4 - delta */
-
+/*
+let answer = "";
 function caseInSwitch(value) {
-  let answer = "";
   switch (value) {
   case 1:
     answer = "alpha";
     break; 
+  } 
+  return answer;
 }
+console.log(caseInSwitch(1));
+console.log(answer);
+
+Primero tengo q llamar a la función para que answer sea alpha, sino, el console.log(answer) se 
+ejecuta antes de que llame a la función y me va a dar como resultado "". */
+
+/*SOLUTION:
+function caseInSwitch(val) {
+  let answer = "";
+  switch (val) {
+  case 1:
+    answer = "alpha";
+    break;
+  case 2:
+    answer = "beta";
+    break; 
+  case 3:
+    answer = "gamma";
+    break;
+  case 4:
+    answer = "delta";
+    break;
+  } 
+  return answer;
+}
+console.log(caseInSwitch(4)); */
+
+/*77 - Adding a Default Option in Switch Statements
+In a switch statement you may not be able to specify all possible values as case statements. Instead, 
+you can add the default statement which will be executed if no matching case statements are found. 
+Think of it like the final else statement in an if/else chain.
+
+A default statement should be the last case.
+
+switch (num) {
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+...
+  default:
+    defaultStatement;
+    break;
+}
+Write a switch statement to set answer for the following conditions:
+a - apple
+b - bird
+c - cat
+default - stuff
+
+SOLUTION: 
+function switchOfStuff(val) {
+  let answer = "";
+  switch (val) {
+    case "a":
+      answer = "apple";
+      break;
+    case "b":
+      answer = "bird";
+      break;
+    case "c":
+      answer = "cat";
+      break;
+    default:
+      answer = "stuff";
+      break
+  }
+  return answer;
 }
 
-console.log(caseInSwitch(1));
-/*77 78 79 */
+console.log(switchOfStuff("d"));  */
+
+/*78 - Multiple Identical Options in Switch Statements
+If the break statement is omitted from a switch statement's case, the following case statement(s) are 
+executed until a break is encountered. If you have multiple inputs with the same output, you can 
+represent them in a switch statement like this:
+
+let result = "";
+switch (val) {
+  case 1:
+  case 2:
+  case 3:
+    result = "1, 2, or 3";
+    break;
+  case 4:
+    result = "4 alone";
+}
+Cases for 1, 2, and 3 will all produce the same result.
+
+PROBLEM: Write a switch statement to set answer for the following ranges:
+1-3 - Low
+4-6 - Mid
+7-9 - High
+Note: You will need to have a case statement for each number in the range.
+
+SOLUTION
+function sequentialSizes(val) {
+  let answer = "";
+  switch (val) {
+    case 1:
+    case 2:
+    case 3:
+      answer = "Low";
+      break;
+    case 4:
+    case 5:
+    case 6:
+      answer = "Mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+      answer = "High";
+      break;
+  } return answer;
+} */
+/* 79 - Replacing If Else Chains with Switch
+If you have many options to choose from, a switch statement can be easier to write than many 
+chained if/else if statements. The following:
+
+if (val === 1) {
+  answer = "a";
+} else if (val === 2) {
+  answer = "b";
+} else {
+  answer = "c";
+}
+can be replaced with:
+
+switch (val) {
+  case 1:
+    answer = "a";
+    break;
+  case 2:
+    answer = "b";
+    break;
+  default:
+    answer = "c";
+}
+
+PROBLEM: Change the chained if/else if statements into a switch statement.
+
+SOLUTION:
+function chainToSwitch(val) {
+  let answer = "";
+  switch (val) {
+    case "bob":
+      answer = "Marley";
+      break;
+    case 42:
+      answer = "The Answer";
+      break;
+    case 1:
+      answer = "There is no #1";
+      break;
+    case 99:
+      answer = "Missed me by this much!";
+      break;
+    case 7:
+      answer = "Ate Nine";
+      break;
+  } return answer;
+} */
+
+/* 80 - Returning Boolean Values from Functions
+You may recall from Comparison with the Equality Operator that all comparison operators return a 
+boolean true or false value.
+
+Sometimes people use an if/else statement to do a comparison, like this:
+
+function isEqual(a, b) {
+  if (a === b) {
+    return true;
+  } else {
+    return false;
+  }
+}
+But there's a better way to do this. Since === returns true or false, we can return the result of the 
+comparison:
+function isEqual(a, b) {
+  return a === b;
+}
+
+PROBLEM: Fix the function isLess to remove the if/else statements. 
+SOLUTION:
+function isLess(a, b) {
+  return a < b;
+}
+isLess(10, 15); */
+
+/* 81 - Return Early Pattern for Functions
+When a return statement is reached, the execution of the current function stops and control returns 
+to the calling location.
+
+Example:
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+The above will display the string Hello in the console, and return the string World. The string 
+byebye will never display in the console, because the function exits at the return statement.
+
+PROBLEM: Modify the function abTest so that if a or b are less than 0 the function will immediately 
+exit with a value of undefined.
+Hint
+Remember that undefined is a keyword, not a string.
+
+SOLUTION:
+function abTest(a, b) {
+  if (a < 0 || b < 0) {
+    return;
+  } else { 
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+  }
+}
+console.log(abTest(2,-2)); */
+
+
+/*82 - Counting Cards
+In the casino game Blackjack, a player can determine whether they have an advantage on the next hand 
+over the house by keeping track of the relative number of high and low cards remaining in the deck. 
+This is called Card Counting.
+
+Having more high cards remaining in the deck favors the player. Each card is assigned a value according 
+to the table below. When the count is positive, the player should bet high. When the count is zero or 
+negative, the player should bet low.
+
+Count Change	   Cards
+    +1	          2, 3, 4, 5, 6
+     0            7, 8, 9
+    -1	          10, 'J', 'Q', 'K', 'A'
+You will write a card counting function. It will receive a card parameter, which can be a number or a 
+string, and increment or decrement the global count variable according to the card's value (see table). 
+The function will then return a string with the current count and the string Bet if the count is 
+positive, or Hold if the count is zero or negative. The current count and the player's decision 
+(Bet or Hold) should be separated by a single space.
+
+Example Outputs: -3 Hold or 5 Bet
+Hint
+Do NOT reset count to 0 when value is 7, 8, or 9.
+Do NOT return an array.
+Do NOT include quotes (single or double) in the output.
+*/
+
+/* SOLUTION:
+let counter = 0;
+function cc (card) {
+  switch (card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      counter ++;
+      break;
+    case 7:
+    case 8:
+    case 9:
+      break;
+    // Since 7, 8, and 9 aren’t worth anything, we ignore those cards in our switch statement. 
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      counter --;
+      break;
+  } 
+  if (counter > 0) {
+    return counter + " Bet";
+  } else {
+    return counter + " Hold";
+  }
+}
+
+cc (10);
+cc ("J");
+cc ("Q");
+cc ("K");
+cc ("A"); /*
+
+/* 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 */
 
 
 
