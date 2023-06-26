@@ -2108,9 +2108,66 @@ function phoneticLookup(val) {
 console.log(phoneticLookup("alpha"));
 */
 
-/* 91 - */ 
+/* 91 - Testing Objects for Properties
+To check if a property on a given object exists or not, you can use the .hasOwnProperty() method. 
+someObject.hasOwnProperty(someProperty) returns true or false depending on if the property is found 
+on the object or not.
 
-/*92 93 94 95 96 97 98 99 */
+Example
+function checkForProperty(object, property) {
+  return object.hasOwnProperty(property);
+}
+
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'top'); // true
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle'); // false
+The first checkForProperty function call returns true, while the second returns false.
+
+Modify the function checkObj to test if the object passed to the function parameter obj contains 
+the specific property passed to the function parameter checkProp. If the property passed to checkProp 
+is found on obj, return that property's value. If not, return Not Found.
+
+SOLUTION: 
+function checkObj(obj, checkProp) {     
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } 
+  return "Not Found";
+}
+*/
+
+/*92 - Manipulating Complex Objects
+Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to 
+handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, 
+functions, and objects.
+
+Here's an example of a complex data structure:
+
+const ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD", 
+      "Cassette", 
+      "LP"
+    ],
+    "gold": true
+  }
+];
+This is an array which contains one object inside. The object has various pieces of metadata about 
+an album. It also has a nested formats array. If you want to add more album records, you can do this 
+by adding records to the top level array. Objects hold data in a property, which has a key-value 
+format. In the example above, "artist": "Daft Punk" is a property that has a key of artist and a 
+value of Daft Punk.
+
+Note: You will need to place a comma after every object in the array, unless it is the last object in 
+the array.
+
+PROBLEM: Add a new album to the myMusic array. Add artist and title strings, release_year number, 
+and a formats array of strings.*/
+
+/* 93 94 95 96 97 98 99 */
 
 
 
