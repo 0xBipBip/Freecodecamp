@@ -93,3 +93,9 @@
 93 - Accessing Nested Objects
 94 - Accessing Nested Arrays
 95 - Record Collection
+96 - Iterate with JavaScript While Loops
+97 - Iterate with JavaScript For Loops
+98 - Iterate Odd Numbers With a For Loop
+99 - Count Backwards With a For Loop
+100 - Iterate Through an Array with a For Loop
+101 - Nesting For Loops
