@@ -99,3 +99,15 @@
 99 - Count Backwards With a For Loop
 100 - Iterate Through an Array with a For Loop
 101 - Nesting For Loops
+102 - Iterate with JavaScript Do...While Loops
+103 - Replace Loops using Recursion
+104 - Profile Lookup
+105 - Generate Random Fractions with JavaScript
+106 - Generate Random Whole Numbers with JavaScript
+107 - Generate Random Whole Numbers within a Range
+108 - Use the parseInt Function
+109 - Use the parseInt Function with a Radix
+110 - Use the Conditional (Ternary) Operator
+111 - Use Multiple Conditional (Ternary) Operators
+112 - Use Recursion to Create a Countdown
+113 - Use Recursion to Create a Range of Numbers
