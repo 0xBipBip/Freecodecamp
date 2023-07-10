@@ -371,6 +371,120 @@ const HIGH_TEMPERATURES = {
   tomorrow: 80
 };
 
+const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES;
+console.log(highToday, highTomorrow);
 */
 
-/*11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 */
+/*11 - Use Destructuring Assignment to Assign Variables from Nested Objects
+You can use the same principles from the previous two lessons to destructure values from nested objects.
+Using an object similar to previous examples:
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+- Here's how to extract the values of object properties and assign them to variables with the same name:
+const { johnDoe: { age, email }} = user;
+- And here's how you can assign an object properties' values to variables with different names:
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+
+PROBLEM: Replace the two assignments with an equivalent destructuring assignment. It should still 
+assign the variables lowToday and highToday the values of today.low and today.high from 
+the LOCAL_FORECAST object.
+
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+SOLUTION:
+const {today: {low: lowToday, high: highToday}} = LOCAL_FORECAST;
+*/
+
+/*12 - Use Destructuring Assignment to Assign Variables from Arrays
+ES6 makes destructuring arrays as easy as destructuring objects.
+One key difference between the spread operator and array destructuring is that the spread 
+operator unpacks all contents of an array into a comma-separated list. Consequently, you 
+cannot pick or choose which elements you want to assign to variables.
+
+Destructuring an array lets us do exactly that:
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b);
+The console will display the values of a and b as 1, 2.
+The variable a is assigned the first value of the array, and b is assigned the second value of the 
+array. We can also access the value at any index in an array with destructuring by using commas 
+to reach the desired index:
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);
+The console will display the values of a, b, and c as 1, 2, 5.
+
+PROBLEM: Use destructuring assignment to swap the values of a and b so that a receives the value stored in b, 
+and b receives the value stored in a.
+let a = 8, b = 6;
+SOLUTION
+[a, b] = [b, a];
+console.log(a, b);
+*/
+
+/*13 - Destructuring via rest elements
+In some situations involving array destructuring, we might want to collect the rest of the elements 
+into a separate array.
+The result is similar to Array.prototype.slice(), as shown below:
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b);
+console.log(arr);
+The console would display the values 1, 2 and [3, 4, 5, 7].
+
+Variables a and b take the first and second values from the array. After that, because of the rest 
+syntax presence, arr gets the rest of the values in the form of an array. The rest element only works 
+correctly as the last variable in the list. As in, you cannot use the rest syntax to catch a subarray 
+that leaves out the last element of the original array.
+
+PROBLEM: Use a destructuring assignment with the rest syntax to emulate the behavior 
+of Array.prototype.slice(). removeFirstTwo() should return a sub-array of the original array list with 
+the first two elements omitted.
+*/
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
+
+function removeFirstTwo(list) {
+  // Mi Solución
+  // const [a, b, ...arr] = list;
+  // const shorterList = [...arr];
+
+  // MEJOR
+  const [a, b, ...shorterList] = list; 
+    return shorterList;
+}
+console.log(removeFirstTwo(source));
+
+
+/*14 - Use Destructuring Assignment to Pass an Object as a Function's Parameters
+In some cases, you can destructure the object in a function argument itself.
+
+Consider the code below:
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+}
+This effectively destructures the object sent into the function. This can also be done in-place:
+const profileUpdate = ({ name, age, nationality, location }) => {
+}
+When profileData is passed to the above function, the values are destructured from the function 
+parameter for use within the function.
+
+PROBLEM: Use destructuring assignment within the argument to the function half to send only max 
+and min inside the function.
+*/
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+/*15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 */
