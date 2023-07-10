@@ -446,7 +446,7 @@ that leaves out the last element of the original array.
 PROBLEM: Use a destructuring assignment with the rest syntax to emulate the behavior 
 of Array.prototype.slice(). removeFirstTwo() should return a sub-array of the original array list with 
 the first two elements omitted.
-*/
+
 const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sourceWithoutFirstTwo = removeFirstTwo(source);
 
@@ -460,7 +460,7 @@ function removeFirstTwo(list) {
     return shorterList;
 }
 console.log(removeFirstTwo(source));
-
+*/
 
 /*14 - Use Destructuring Assignment to Pass an Object as a Function's Parameters
 In some cases, you can destructure the object in a function argument itself.
@@ -477,7 +477,7 @@ parameter for use within the function.
 
 PROBLEM: Use destructuring assignment within the argument to the function half to send only max 
 and min inside the function.
-*/
+
 const stats = {
   max: 56.78,
   standard_deviation: 4.34,
@@ -486,5 +486,10 @@ const stats = {
   min: -0.75,
   average: 35.85
 };
+
+SOLUTION:
+const half = ({max, min}) => (max + min)/2.0;
+console.log(half(stats));
+*/
 
 /*15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 */
